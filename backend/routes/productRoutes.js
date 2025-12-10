@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Product = require("../models/Product");
 
-// --- ROTA DE SEED (CRIAR 20 PRODUTOS) ---
 // Acesse: http://localhost:8080/api/products/seed
 router.get("/seed", async (req, res) => {
   try {
@@ -11,14 +10,12 @@ router.get("/seed", async (req, res) => {
 
     const sizesList = ["P", "M", "G", "GG", "XG"];
 
-    // Função para gerar estoque aleatório (entre 5 e 20 unidades)
     const generateSizes = () =>
       sizesList.map((s) => ({
         size: s,
         stock: Math.floor(Math.random() * 15) + 5,
       }));
 
-    // --- 1. OS 5 PRODUTOS EM PROMOÇÃO (Destaques) ---
     const promoProducts = [
       {
         name: "Camiseta NEXARI Origins",
@@ -88,7 +85,6 @@ router.get("/seed", async (req, res) => {
       },
     ];
 
-    // --- 2. OS 15 PRODUTOS NORMAIS (Catálogo Geral) ---
     const normalProducts = [
       {
         name: "Camiseta Node.js Backend",
@@ -257,7 +253,6 @@ router.get("/seed", async (req, res) => {
       },
     ];
 
-    // Junta tudo (5 promos + 15 normais = 20 produtos)
     await Product.insertMany([...promoProducts, ...normalProducts]);
 
     res.json({
@@ -270,7 +265,6 @@ router.get("/seed", async (req, res) => {
   }
 });
 
-// --- ROTA DE BUSCAR PROMOÇÕES (Sempre antes do ID) ---
 router.get("/promotions", async (req, res) => {
   try {
     const promoProducts = await Product.find({ onSale: true });
@@ -280,7 +274,6 @@ router.get("/promotions", async (req, res) => {
   }
 });
 
-// --- ROTA DE LISTAR TODOS ---
 router.get("/", async (req, res) => {
   try {
     const products = await Product.find();
@@ -290,7 +283,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// --- ROTA DE BUSCAR POR ID ---
 router.get("/:id", async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);

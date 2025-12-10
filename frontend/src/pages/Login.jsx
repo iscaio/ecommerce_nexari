@@ -12,7 +12,7 @@ import {
   CardTitle,
 } from "../components/ui/card";
 import { Zap, Lock, Mail } from "lucide-react";
-import { useToast } from "../hooks/use-toast"; // Descomentei aqui
+import { useToast } from "../hooks/use-toast";
 
 const Login = () => {
   const [email, setEmail] = useState("");

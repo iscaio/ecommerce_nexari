@@ -19,7 +19,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [loading, setLoading] = useState(false); // Novo estado de loading
+  const [loading, setLoading] = useState(false);
 
   const { register } = useAuth();
   //const navigate = useNavigate();
@@ -27,9 +27,8 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Trava o botão
+    setLoading(true);
 
-    // Validações básicas
     if (password !== confirmPassword) {
       toast({
         title: "Erro",
@@ -60,8 +59,7 @@ const Register = () => {
           className: "bg-green-500 text-white border-none",
         });
 
-        // --- A CORREÇÃO MÁGICA AQUI ---
-        // Força o navegador a ir para a página de promoções do zero
+        //corrigir bug - provisorio
         window.location.href = "/promotions";
       } else {
         toast({
@@ -72,7 +70,7 @@ const Register = () => {
       }
     } catch (error) {
       console.error("Erro no registro:", error);
-      // Se criou o token mas deu erro no front, redireciona mesmo assim
+
       if (localStorage.getItem("token")) {
         window.location.href = "/promotions";
       } else {
@@ -83,7 +81,7 @@ const Register = () => {
         });
       }
     } finally {
-      setLoading(false); // Destrava o botão
+      setLoading(false);
     }
   };
 

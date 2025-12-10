@@ -6,7 +6,6 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, required: true },
 });
 
-// Transforma _id em id para o frontend não reclamar
 UserSchema.set("toJSON", {
   virtuals: true,
   versionKey: false,

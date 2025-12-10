@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react"; // Adicionei useEffect e useState
+import React, { useEffect, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-import api from "../api/axios"; // Importando a API
+import api from "../api/axios";
 import {
   Card,
   CardContent,
@@ -22,11 +22,9 @@ const Orders = () => {
   const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
-  // Estados para dados reais
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Buscar pedidos assim que a tela abre
   useEffect(() => {
     if (isAuthenticated) {
       fetchOrders();

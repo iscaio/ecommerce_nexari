@@ -54,7 +54,6 @@ router.post("/add", async (req, res) => {
   }
 });
 
-//exibe depois
 router.get("/", async (req, res) => {
   try {
     const cart = await Cart.findOne({ userId: req.user.id });

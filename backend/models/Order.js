@@ -22,7 +22,7 @@ const OrderSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-// Configuração para o ID ficar bonito no frontend
+//ID ficar bonito no frontend
 OrderSchema.set("toJSON", {
   virtuals: true,
   versionKey: false,

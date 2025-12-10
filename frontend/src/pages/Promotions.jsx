@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from "react";
-import api from "../api/axios"; // Importando sua API real
+import api from "../api/axios";
 import ProductCard from "../components/ProductCard";
-import { Tag, TrendingDown, Clock, Loader2 } from "lucide-react"; // Adicionei Loader2
+import { Tag, TrendingDown, Clock, Loader2 } from "lucide-react";
 import { Badge } from "../components/ui/badge";
 
 const Promotions = () => {
-  // Estado para guardar os produtos que vêm do Backend
   const [promoProducts, setPromoProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchPromotions = async () => {
       try {
-        // Chama a rota nova que criamos no backend
         const response = await api.get("/products/promotions");
         setPromoProducts(response.data);
       } catch (error) {
@@ -25,13 +23,11 @@ const Promotions = () => {
     fetchPromotions();
   }, []);
 
-  // Cálculo de desconto máximo (protegido contra lista vazia)
   const maxDiscount =
     promoProducts.length > 0
       ? Math.max(...promoProducts.map((p) => p.discount || 0))
       : 0;
 
-  // Tela de Carregamento simples
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">

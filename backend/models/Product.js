@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 
 const SizeSchema = new mongoose.Schema(
   {
-    size: { type: String, required: true }, // ex: 'P', 'M'
-    stock: { type: Number, default: 0 }, // ex: 5
+    size: { type: String, required: true },
+    stock: { type: Number, default: 0 },
   },
   { _id: false }
 );
@@ -11,14 +11,14 @@ const SizeSchema = new mongoose.Schema(
 const ProductSchema = new mongoose.Schema({
   name: { type: String, required: true },
   price: { type: Number, required: true },
-  oldPrice: { type: Number }, // Para riscar o preço
-  discount: { type: Number }, // % do desconto
-  onSale: { type: Boolean, default: false }, // Ativa a badge de promoção
+  oldPrice: { type: Number },
+  discount: { type: Number },
+  onSale: { type: Boolean, default: false },
   image: { type: String, required: true },
   description: { type: String },
   category: { type: String },
   colors: [{ type: String }],
-  sizes: [SizeSchema], // Array com controle de estoque
+  sizes: [SizeSchema],
 });
 
 ProductSchema.set("toJSON", {

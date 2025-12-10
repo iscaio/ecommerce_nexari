@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// Confirme se o IP ainda é este (muda se reiniciar o modem/pc)
+// Confirme seu ip.
 const API_URL = "http://192.168.0.135:8080/api";
 
 const api = axios.create({

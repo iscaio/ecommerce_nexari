@@ -11,7 +11,7 @@ import {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
 import { Tag, ShoppingCart, LogOut } from "lucide-react-native";
-import api from "../services/api"; // Certifique-se que o caminho está correto
+import api from "../services/api";
 
 export default function PromotionsScreen() {
   const [products, setProducts] = useState([]);
