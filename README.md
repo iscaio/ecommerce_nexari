@@ -62,7 +62,7 @@ O servidor rodará na porta **8080**.
 
 ```bash
 # Entre na pasta do backend
-cd backend-loja
+cd backend
 
 # Instale as dependências
 npm install
@@ -107,8 +107,7 @@ O App precisa saber o IP do seu computador para conectar na API.
 
 ```javascript
 // Exemplo:
-const API_URL =
-  "[http://192.168.0.135:8080/api](http://192.168.0.135:8080/api)";
+const API_URL =http://192.168.0.135:8080/api](http://192.168.0.135:8080/api;
 ```
 
 **Rodando o Expo:**
