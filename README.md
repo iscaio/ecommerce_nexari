@@ -71,6 +71,14 @@ npm install
 node server.js
 ```
 
+> **!!!!ATENÇÃO!!!!!:** LEMBRE DE CRIAR O .ENV NA RAIZ DA PASTA DO BACKEND
+
+```bash
+PORT=8080
+MONGO_URI=mongodb+srv://TEULOGIN:TUASENHA@cluster0.3tazkht.mongodb.net/nexari?appName=Cluster0 (!!!EXEMPLO!!!)
+JWT_SECRET=SEU_CODIGO_SECRETO_AQUI
+```
+
 > **IMPORTANTE:** Para criar os produtos iniciais (Seed) no banco de dados, abra seu navegador e acesse:
 > `http://localhost:8080/api/products/seed`
 
