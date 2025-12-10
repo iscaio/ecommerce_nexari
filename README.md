@@ -52,7 +52,7 @@ Siga a ordem abaixo para rodar o projeto.
 ### 1. Clonar o Repositório
 
 ```bash
-git clone [https://github.com/iscaio/ecoomerci_nexari.git](https://github.com/iscaio/ecoomerci_nexari.git)
+git clone https://github.com/iscaio/ecommerce_nexari
 cd nexari-project
 ```
 
