@@ -67,6 +67,9 @@ cd backend
 # Instale as dependências
 npm install
 
+# Instale o mongoose
+npm install mongoose
+
 # Inicie o servidor
 node server.js
 ```
