@@ -113,7 +113,7 @@ npm install
 **Configuração de IP (Obrigatória):**
 O App precisa saber o IP do seu computador para conectar na API.
 
-1. Abra o arquivo `src/services/api.js`.
+1. Abra o arquivo `services/api.js`.
 2. Atualize a linha do IP com o endereço da sua máquina:
 
 ```javascript
