@@ -118,7 +118,7 @@ O App precisa saber o IP do seu computador para conectar na API.
 
 ```javascript
 // Exemplo:
-const API_URL =http://192.168.0.135:8080/api](http://192.168.0.135:8080/api;
+const API_URL=http://192.168.0.135:8080/api;
 ```
 
 **Rodando o Expo:**
